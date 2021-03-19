@@ -1,0 +1,11 @@
+{
+  "name": "exo-cmd-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/BsK-Coding/exo-cmd-app.git",
+  "author": "BsK-Coding <blackshark.blog@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}
