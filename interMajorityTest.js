@@ -9,10 +9,9 @@ Un utilisateur francais lancerait le programme avec la commande:
 % node interMajorityTest.js 18
 
 Si l'âge est inférieur à l'argument passé en ligne de commande lui afficher avec le prenom et nom correspondant:
-
 Désolé, prenom nom, vous êtes mineur, vous ne pouvez pas voter
-Si l'âge est supérieur ou égal à l'argument passé en ligne de commande lui afficher:
 
+Si l'âge est supérieur ou égal à l'argument passé en ligne de commande lui afficher:
 prenom nom, vous êtes majeur, vous pouvez voter
 */
 
@@ -21,6 +20,8 @@ prenom nom, vous êtes majeur, vous pouvez voter
 
 //  % node interMajorityTest.js 18  => Utilisateur Français
 //  % node interMajorityTest.js 21  => Utilisateur Americain
+// IF (age < majorite) => prenom, nom Désolé, prenom nom, vous êtes mineur, vous ne pouvez pas voter
+// IF (age > majorite) => prenom, nom Désolé, prenom nom, ous êtes majeur, vous pouvez voter
 
 /* Import des librairies Requises */
 
