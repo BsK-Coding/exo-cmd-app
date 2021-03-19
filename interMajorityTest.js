@@ -21,7 +21,7 @@ prenom nom, vous êtes majeur, vous pouvez voter
 //  % node interMajorityTest.js 18  => Utilisateur Français
 //  % node interMajorityTest.js 21  => Utilisateur Americain
 // IF (age < majorite) => Désolé, prenom nom, vous êtes mineur, vous ne pouvez pas voter
-// IF (age > majorite) => prenom nom, ous êtes majeur, vous pouvez voter
+// IF (age > majorite) => prenom nom, vous êtes majeur, vous pouvez voter
 
 /* Import des librairies Requises */
 
