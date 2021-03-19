@@ -24,28 +24,28 @@ const chalk = require('chalk')
 
 /* fonction */
 
-const NbMagic = (boucle, count, nbSecret, nb) => {
+const NbMagic = (boucle, nbSecret, nb, nbStr) => {
 
-  /* Check nombre entrer => nbStr */
+  while (boucle) {
+    const nbStr = readlineSync.question('Entrer un nombre: ')
+    const nb = Number(nbStr)
 
-  if (isNaN(nbStr)) {
-    console.log(chalk.red('!! Vous devez entrer un nombre !!'))
-    process.exit(1)
-  }
-  else {
-    while (boucle) {
-      if (nb < nbSecret) {
-        console.log(chalk.red('Nombre trop petit'))
-        process.exit(1)
-      }
-      if (nb > nbSecret) {
-        console.log(chalk.red('Nombre trop grand'))
-        process.exit(1)
-      }
-      else {
-        console.log(chalk.green('Bravo!'))
-        process.exit(1)                             // On pourrait également mettre "return boucle = false"
-      }
+    /* Check nombre entrer => nbStr */
+    if (isNaN(nbStr)) {
+      console.log(chalk.red('!! Vous devez entrer un nombre !!'))
+      continue
+    }
+    if (nb < nbSecret) {
+      console.log(chalk.red('Nombre trop petit'))
+      continue
+    }
+    else if (nb > nbSecret) {
+      console.log(chalk.red('Nombre trop grand'))
+      continue
+    }
+    else if (nb == nbSecret) {
+      console.log(chalk.green('Bravo!'))
+      process.exit(1)                             // On pourrait également mettre "return boucle = false"
     }
   }
 }
@@ -64,11 +64,8 @@ if (isNaN(process.argv[2])) {
 }
 
 let boucle = true
-let count = 0
-const nbStr = readlineSync.question('Entrer un nombre: ')
-const nb = Number(nbStr)
+//let count = 0
+let nbStr = ''
+let nb = 0
 
-
-NbMagic(boucle, count, nbSecret, nb)
-
-/* !! Reste à régler la boucle tant que l'utilisateur ne trouve pas le bon nombre remplacer temporairement par process.exit(1) pour terminer la boucle !! */
+NbMagic(boucle, nbSecret, nb, nbStr)
