@@ -9,16 +9,27 @@ si le nombre entré par l'utilisateur est égal au nombre secret: 'Bravo!' en ve
 
 /* Pseudo Code */
 // while (true) => permet de bouclé le programme tant que l'utilisateur ne trouve pas le nombre entré en commande
-// IF < nbSecret = console.log(Nombre trop petit) écrit en rouge
-// IF > nbSecret = console.log(Nombre trop grand) écrit en rouge
-// IF < nbSecret = console.log(Bravo!) écrit en vert
+// initialisation de variables: nb / nbSecret(taper dans la commande)
+// IF nb < nbSecret = console.log(Nombre trop petit) écrit en rouge (chalk)
+// IF nb > nbSecret = console.log(Nombre trop grand) écrit en rouge
+// IF nb == nbSecret = console.log(Bravo!) écrit en vert
+
+/* Import de Librairie utiles au programme */
 
 const readlineSync = require('readline-sync')
+const chalk = require('chalk')
 
-const NbMagic = (nbSecret) => {
+const NbMagic = (nbSecret, nb) => {
   while (true) {
-
+    if (nb < nbSecret) {
+      console.log(chalk.red('Nombre trop petit'))
+    }
+    if (nb > nbSecret) {
+      console.log(chalk.red('Nombre trop grand'))
+    }
   }
-
 }
 
+const nbSecret = Number(process.argv[2])
+const nb = readlineSync.question('Entrer un nombre: ')
+NbMagic(nbSecret, nb)
