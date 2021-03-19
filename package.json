@@ -6,6 +6,7 @@
   "author": "BsK-Coding <blackshark.blog@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "chalk": "^4.1.0",
     "readline-sync": "^1.4.10"
   }
 }
