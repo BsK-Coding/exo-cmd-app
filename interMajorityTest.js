@@ -91,13 +91,13 @@ let pays = ['france', 'amerique']
 
 const prenom = readlineSync.question('Entrer votre Prenom: ')
 if (!isNaN(prenom)) {
-  console.log(`Error: ${process.argv[1]} La valeur renseigné doit être composé de caractères`)
+  console.log(`Error: ${process.argv[3]} La valeur renseigné doit être composé de caractères`)
   process.exit(1)
 }
 
 const nom = readlineSync.question('Entrer votre Nom: ')
 if (!isNaN(nom)) {
-  console.log(`Error: ${process.argv[1]} La valeur renseigné doit être composé de caractères`)
+  console.log(`Error: ${process.argv[4]} La valeur renseigné doit être composé de caractères`)
   process.exit(1)
 }
 
