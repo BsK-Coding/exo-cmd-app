@@ -107,6 +107,4 @@ if (isNaN(age)) {
   process.exit(1)
 }
 
-/* Accès à notre Algorithme */
-
 droitVote(majorite, age, pays, prenom, nom)

@@ -6,27 +6,50 @@ Si l'âge est inférieur à 18 afficher le prénom et nom correspondant
 
 /* Pseudo Code */
 // readlineSync => Importer la librairie, afin que l'utilisateur puisse entrée ces informations
+// Fonction droitVote
 // let nom / let prenom / let age
-// IF < 18 console.log(prenom, nom)
+// IF < 18  =>  console.log(`Désolé, prenom, nom, vous êtes mineur, vous ne pouvez pas voter`)
+// IF > 18  =>  console.log(`${prenom} ${nom}, vous êtes majeur, vous pouvez voter`))
 
+
+/* Import de Librairie */
 const readlineSync = require('readline-sync')
 
-const droitVote = (prenom, nom, age) => {
-
-  if (age < 18) {
+/* Fonction droitVote */
+const droitVote = (majorite, prenom, nom, age) => {
+  if (age < majorite) {
     console.log(`Désolé, ${prenom} ${nom}, vous êtes mineur, vous ne pouvez pas voter`)
   }
-  else if (age >= 18) {
+  else if (age >= majorite) {
     console.log(`${prenom} ${nom}, vous êtes majeur, vous pouvez voter`)
   }
 }
 
+const majorite = 18
+/*
 const prenom = readlineSync.question('Entrer votre Prenom: ')
 const nom = readlineSync.question('Entrer votre Nom: ')
 const ageStr = readlineSync.question(`Veuillez entrer votre age: `)
-const age = Number(ageStr)
+*/
 
-/* let prenom = process.argv[2]
-let nom = process.argv[3]
-let age = Number(process.argv[4])*/
-droitVote(prenom, nom, age)
+/*-- Check des données entrer --*/
+const prenom = readlineSync.question('Entrer votre Prenom: ')
+if (!isNaN(prenom)) {
+  console.log(`Error: ${prenom} La valeur renseigné doit être composé de caractères`)
+  process.exit(1)
+}
+
+const nom = readlineSync.question('Entrer votre Nom: ')
+if (!isNaN(nom)) {
+  console.log(`Error: ${nom} La valeur renseigné doit être composé de caractères`)
+  process.exit(1)
+}
+
+const ageStr = readlineSync.question(`Veuillez entrer votre age: `)
+const age = Number(ageStr)
+if (isNaN(age)) {
+  console.log(`Error: ${age} La valeur renseigné doit être composé d'un nombre`)
+  process.exit(1)
+}
+
+droitVote(majorite, prenom, nom, age)
